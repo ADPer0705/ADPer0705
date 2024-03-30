@@ -1,8 +1,8 @@
-- 👋 Hi, I’m ANAY DHAVAL PANDYA
+- 👋 Hi, I’m ADPer
+- 👀 I’m interested in cybersecurity, ai and machine learning and tech in general 
 - 🌱 I’m currently pursuing an integrated B.tech M.tech course on Computer Science and Engineering with specialisation in Cybersecurity
 - 📫 How to reach me ...
-     mail : adper0705@gmail.com  
-     phone: +91 8905151222  
+     mail : adper0705@gmail.com 
 <!---
 - 👋 Hi, I’m @ADPer0705
 - 👀 I’m interested in ...
