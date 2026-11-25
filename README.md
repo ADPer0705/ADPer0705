@@ -1,133 +1,51 @@
-```text
-ADPER(1)                         User Systems Manual                        ADPER(1)
+### Hi, I'm Anay (`adper`)
 
-NAME
-       adper — Anay Dhaval Pandya · Cybersecurity, Forensics & Local-First Systems
+I'm a cybersecurity student at NFSU Gandhinagar. Outside of classes, I build security tools, smart utilities, and local-first ML systems that run offline without cloud dependencies.
 
-SYNOPSIS
-       adper [--focus Cybersecurity|local-ai|systems]
-             [--env linux] [--cloud-dependency none]
-
-SPEC
-       role        :: CSE (Cybersecurity) @ National Forensic Sciences University
-       location    :: Gandhinagar, India
-       philosophy  :: Deterministic where possible. Offline by default.
-                      Zero rent-seeking wrappers around someone else's API.
-       long_game   :: A Stark-grade personal workstation.
-```
-
-I'm adper, a cybersecurity student at NFSU Gandhinagar. Outside of classes, I mostly build security tools, automation and smart utilities, and work on running machine learning models locally without cloud dependencies. You can find my projects and write-ups at [dearanayji.rocks](https://dearanayji.rocks).
+More write-ups and project notes at **[dearanayji.rocks](https://dearanayji.rocks)**.
 
 ---
 
-### `01` // Flagship Systems
+### Projects
 
-<table>
-  <thead>
-    <tr>
-      <th align="left">System</th>
-      <th align="left">Domain</th>
-      <th align="left">Engineering Spec</th>
-      <th align="left">Links</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><strong><a href="https://github.com/ADPer0705/verity">Verity</a></strong><br/><code>v0.6.0</code></td>
-      <td>Deepfake Forensics</td>
-      <td>
-        Multi-modal examination for image, video, and audio. Ports <strong>58 detector architectures</strong> (39 evidence-grade) into isolated, version-pinned <code>uv</code> envs alongside 5 model-free forensic analyzers. Never collapses split panels into one fake/real score. Ships as a standalone air-gapped Linux executable with USB kit export/import and SHA-256 chain-of-custody <code>.zip</code> bundles.
-      </td>
-      <td>
-        <a href="https://verity.dearanayji.rocks">Wiki</a><br/>
-        <a href="https://github.com/ADPer0705/verity">Repo</a>
-      </td>
-    </tr>
-    <tr>
-      <td><strong><a href="https://github.com/ADPer0705/droidscanner">DroidScanner</a></strong><br/><code>v1.1.2</code></td>
-      <td>Android Security</td>
-      <td>
-        Rootless, 100% offline Android security guardian with <code>INTERNET</code> permission stripped at the OS manifest level. Pairs Scoring Engine v3 (~380 permissions, 19 combo rules) with streaming low-RAM Deep APK/DEX inspection, pre-install APK cert-mismatch checks, 16 device posture audits, a <code>WorkManager</code> background guard, and a bounded on-device MediaPipe encoder.
-      </td>
-      <td>
-        <a href="https://droidscanner.dearanayji.rocks">Wiki</a><br/>
-        <a href="https://github.com/ADPer0705/droidscanner">Repo</a>
-      </td>
-    </tr>
-    <tr>
-      <td><strong><a href="https://github.com/ADPer0705/sempropos">sempropos</a></strong><br/><code>v1.0.1</code></td>
-      <td>Local AI / CLI</td>
-      <td>
-        Offline-first replacement for <code>apropos</code>, <code>--help</code>, and <code>man</code>. Indexes local binaries across 4 sources (<code>man(7)</code>/<code>mdoc(7)</code>, <code>tldr-pages</code>, Fish/Zsh completions, safe <code>--help</code> probing) into SQLite v3 + FTS5 + FastEmbed. Synthesizes grounded shell commands via curated local GGUF models (<code>llama.cpp</code>) or Ollama behind a warm Unix-socket daemon (<code>&lt;200ms</code>) and <code>Ctrl+S</code> shell widget.
-      </td>
-      <td>
-        <a href="https://sempropos.dearanayji.rocks">Wiki</a><br/>
-        <a href="https://github.com/ADPer0705/sempropos">Repo</a><br/>
-        <a href="https://pypi.org/project/sempropos/">PyPI</a>
-      </td>
-    </tr>
-    <tr>
-      <td><strong><a href="https://github.com/GR4Y-SCALE/ChronoTrace">ChronoTrace</a></strong><br/><code>2026</code></td>
-      <td>NTFS Forensics</td>
-      <td>
-        NTFS anti-forensics detection framework for post-mortem EnCase <code>.E01</code> images and live Windows monitoring. Parses <code>$MFT</code>, <code>$UsnJrnl</code>, and <code>$LogFile</code> via <code>libewf</code>, correlates <code>$SI</code> vs <code>$FN</code> timestamps across 15 deterministic rules, and streams live alerts &amp; timelines over FastAPI + React 19 WebSockets.
-      </td>
-      <td>
-        <a href="https://github.com/GR4Y-SCALE/ChronoTrace">Repo</a>
-      </td>
-    </tr>
-    <tr>
-      <td><strong><a href="https://github.com/ADPer0705/adbsight">ADBSight</a></strong><br/><code>v1.0.0</code></td>
-      <td>Systems / Android</td>
-      <td>
-        Cross-platform Rust + Ratatui TUI deep inspector over USB and Wi-Fi ADB. Features Android 11+ terminal Unicode QR pairing, mDNS auto-discovery, USB-to-Wi-Fi handoff, 8 live inspector modules (CPU/Wi-Fi sparklines, <code>dumpsys</code>, processes, packages, streaming logcat, dual-pane files, personal data, shell), WAL-mode SQLite snapshots, and a <code>--demo</code> simulator.
-      </td>
-      <td>
-        <a href="https://adbsight.dearanayji.rocks">Wiki</a><br/>
-        <a href="https://github.com/ADPer0705/adbsight">Repo</a>
-      </td>
-    </tr>
-    <tr>
-      <td><strong><a href="https://github.com/ADPer0705/gloss">Gloss</a></strong><br/><code>v2.4.0</code></td>
-      <td>On-Device NLP</td>
-      <td>
-        202-language offline Android translation reader powered by quantized Meta AI <code>NLLB-200-distilled-600M</code> INT8 ONNX (~1.4 GB peak RAM). Built for instant daily lookup: bidirectional tap-a-word meanings, home-screen widgets, offline TTS, and in-app GitHub Releases / Obtainium updates with zero telemetry.
-      </td>
-      <td>
-        <a href="https://gloss.dearanayji.rocks">Wiki</a><br/>
-        <a href="https://github.com/ADPer0705/gloss">Repo</a>
-      </td>
-    </tr>
-  </tbody>
-</table>
+#### [Verity](https://github.com/ADPer0705/verity) `v0.6.0` · [Wiki](https://verity.dearanayji.rocks)
+Multi-modal deepfake forensics suite for image, video, and audio. Runs **58 detector architectures** (39 evidence-grade) in isolated, version-pinned `uv` environments alongside 5 model-free forensic analyzers, keeping panel outputs separate rather than collapsing them into a single score. Ships as a standalone air-gapped Linux binary with USB kit export/import and SHA-256 chain-of-custody bundles.
+
+#### [DroidScanner](https://github.com/ADPer0705/droidscanner) `v1.1.2` · [Wiki](https://droidscanner.dearanayji.rocks)
+Rootless, offline Android security analyzer with the `INTERNET` permission stripped at the manifest level. Combines a permission/combo scoring engine (~380 permissions, 19 rules) with streaming low-RAM APK/DEX inspection, pre-install certificate mismatch checks, 16 device posture audits, a `WorkManager` background guard, and an on-device MediaPipe encoder.
+
+#### [sempropos](https://github.com/ADPer0705/sempropos) `v1.0.1` · [Wiki](https://sempropos.dearanayji.rocks) · [PyPI](https://pypi.org/project/sempropos/)
+Offline semantic replacement for `apropos`, `man`, and `--help`. Indexes local binaries from `man(7)`/`mdoc(7)`, `tldr-pages`, Fish/Zsh completions, and safe `--help` probing into SQLite + FTS5 + FastEmbed, synthesizing grounded commands via local GGUF models (`llama.cpp`) or Ollama over a warm Unix-socket daemon (`<200ms`) with a `Ctrl+S` shell widget.
+
+#### [ChronoTrace](https://github.com/GR4Y-SCALE/ChronoTrace) `2026`
+NTFS anti-forensics detection framework for post-mortem EnCase `.E01` images and live Windows hosts. Parses `$MFT`, `$UsnJrnl`, and `$LogFile` via `libewf`, correlates `$SI` vs. `$FN` timestamps across 15 deterministic rules, and streams timelines over FastAPI and React 19 WebSockets.
+
+#### [ADBSight](https://github.com/ADPer0705/adbsight) `v1.0.0` · [Wiki](https://adbsight.dearanayji.rocks)
+Cross-platform Rust + Ratatui terminal inspector over USB and Wi-Fi ADB. Includes Android 11+ terminal QR pairing, mDNS discovery, USB-to-Wi-Fi handoff, 8 live modules (CPU/Wi-Fi sparklines, `dumpsys`, processes, packages, streaming logcat, dual-pane file browser, personal data, shell), WAL-mode SQLite snapshots, and a `--demo` mode.
+
+#### [Gloss](https://github.com/ADPer0705/gloss) `v2.4.0` · [Wiki](https://gloss.dearanayji.rocks)
+202-language offline Android translation reader running quantized Meta AI `NLLB-200-distilled-600M` INT8 ONNX (~1.4 GB peak RAM). Built for fast daily reading with tap-a-word lookups, home-screen widgets, offline TTS, and in-app GitHub Releases / Obtainium updates.
 
 ---
 
-### `02` // Lab Archive & Smaller Utilities
+### Smaller Tools & Experiments
 
-Smaller tools, focused experiments, and coursework builds that solve one sharp problem and stay out of the way:
-
-- **[`@adper/wordsmith`](https://github.com/ADPer0705/wordsmith)** ([npm](https://www.npmjs.com/package/@adper/wordsmith)) — Zero-config TypeScript CLI using local ONNX zero-shot NER (`GLiNER`) + `chrono-node` to turn OSINT text into probability-ranked password wordlists.
-- **[`qr-transfer`](https://github.com/ADPer0705/qr-transfer)** — Rust terminal file transfer between two air-gapped laptops over screen-to-webcam QR codes implementing stop-and-wait ARQ and SHA-256 verification.
-- **[`MerkleWatch`](https://github.com/ADPer0705/MerkleWatch)** — Deterministic SHA-256 Merkle-tree directory snapshots and tamper verification CLI.
-- **[`Inquiro`](https://github.com/CY-N4P5E/Inquiro)** — Local-first RAG document assistant built on LangChain, FAISS, and Ollama.
-- **[`TeleDM`](https://github.com/ADPer0705/TeleDM)** — Interrupt-tolerant Tkinter desktop download manager backed by SQLite and the Telegram API.
+- **[`@adper/wordsmith`](https://github.com/ADPer0705/wordsmith)** ([npm](https://www.npmjs.com/package/@adper/wordsmith)) — Zero-config TypeScript CLI using local ONNX zero-shot NER (`GLiNER`) and `chrono-node` to generate probability-ranked password wordlists from OSINT text.
+- **[`qr-transfer`](https://github.com/ADPer0705/qr-transfer)** — Rust CLI for air-gapped file transfer between two machines over screen-to-webcam QR codes with stop-and-wait ARQ and SHA-256 verification.
+- **[`MerkleWatch`](https://github.com/ADPer0705/MerkleWatch)** — SHA-256 Merkle-tree directory snapshot and tamper verification CLI.
+- **[`Inquiro`](https://github.com/CY-N4P5E/Inquiro)** — Local-first RAG document assistant built with LangChain, FAISS, and Ollama.
+- **[`TeleDM`](https://github.com/ADPer0705/TeleDM)** — Interrupt-tolerant Tkinter download manager backed by SQLite and the Telegram API.
 
 ---
 
-### `03` // Toolchain & Runtime
+### Stack
 
-```text
-languages     :: Python · Rust · Kotlin · C/C++ · TypeScript · Bash · SQL
-ai / local ml :: PyTorch · ONNX Runtime · llama.cpp · MediaPipe · FastEmbed · RAG / FTS5
-web / infra   :: FastAPI · React · WebSockets · SQLite · Docker · AWS (Lambda / SAM)
-platforms     :: Linux (Fedora / Debian / Kali) · Android SDK · Jetpack Compose · Ratatui
-domains       :: Deepfake Forensics · NTFS / DFIR · Android Security · Systems Tooling
-```
+- **Languages:** Python, Rust, Kotlin, C/C++, TypeScript, Bash, SQL
+- **Local AI & Retrieval:** PyTorch, ONNX Runtime, `llama.cpp`, MediaPipe, FastEmbed, SQLite FTS5
+- **Systems & Infra:** Linux (Fedora / Debian / Kali), Android SDK, Jetpack Compose, Ratatui, FastAPI, React, Docker, AWS (Lambda / SAM)
+- **Focus Areas:** Deepfake Forensics, NTFS / DFIR, Android Security, Offline Inference
 
 ---
-
-### `04` // Signals
 
 [![Portfolio](https://img.shields.io/badge/dearanayji.rocks-05070d?style=flat-square&logo=safari&logoColor=00e5c8)](https://dearanayji.rocks)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-05070d?style=flat-square&logo=linkedin&logoColor=38bdf8)](https://linkedin.com/in/dearanayji)
